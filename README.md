@@ -5,7 +5,7 @@
 
 ###Description:
 This hub will document our progress and contain the Source Code for *CISP 310 Final Group Project*.
-We are students at Folsom Lake College 2012 Fall Semester. CISP 310 is an assembly language class
+We are students at Folsom Lake College for the 2012 Fall Semester. CISP 310 is an assembly language class
 with Professor Caleb Fowler. Email us at flcf12cisp [at] outlook [dot] com for any questions.
 
 ###Group Members: 
