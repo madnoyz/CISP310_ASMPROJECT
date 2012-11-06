@@ -21,68 +21,68 @@ James Daley , Henway Fong, Clyde Pabro, Sang Pham
 
 ##Project Notes
 ###Tasks to be completed
->Install infrared sensors to MSP430
->Code basic movements - frwd, back, right, left
->Establish diagram for registers/pins with usage 
->Convert source code to assembly
+Install infrared sensors to MSP430  
+Code basic movements - frwd, back, right, left  
+Establish diagram for registers/pins with usage  
+Convert source code to assembly  
 
 ###Programs Used
->ENERGIA
->Assembler
+ENERGIA  
+Assembler  
 
 ###Assembly Notes
->ARM (Advanced RISC Machines Ltd.) processor used for MSP430 requires conversion
->Reference to ARM: Assembly Language Programming by Peter Knaggs and Stephen Welsh [SOURCE] (http://www.eng.auburn.edu/~nelson/courses/elec5260_6260/ARM_AssyLang.pdf) [cp]
->One significant change from x86 to ARM is register calls: eax vs r1
->General purpose registers ( R0 - R7 )
->General registers with no special use ( R8 - R12 )
->Special purpose registers ( R13 - R15 )
->*R13 is Stack Pointer (SP) -> store contents of any register, a function to use on the stack on entry of a subroutine
->*R14 is Link Register (LR) -> holds the return address for a subroutine
->*R15 is Program Counter (PC) or instruction pointer -> performs next instruction
-
->CPSR : Current Processor Status Registers
->  31     30     29     28     27  . . . . . . 8     7     6      5        4 . . . 0 
->|  N   |   Z   |   C  |   V   |        SBZ         |  I   |  F  | SBZ |  MODE  |
+ARM (Advanced RISC Machines Ltd.) processor used for MSP430 requires conversion  
+Reference to ARM: Assembly Language Programming by Peter Knaggs and Stephen Welsh [SOURCE] (http://www.eng.auburn.edu/~nelson/courses/elec5260_6260/ARM_AssyLang.pdf) [cp]  
+One significant change from x86 to ARM is register calls: eax vs r1  
+General purpose registers ( R0 - R7 )  
+General registers with no special use ( R8 - R12 )  
+Special purpose registers ( R13 - R15 )  
+*R13 is Stack Pointer (SP) - store contents of any register, a function to use on the stack on entry of a subroutine  
+*R14 is Link Register (LR) - holds the return address for a subroutine  
+*R15 is Program Counter (PC) or instruction pointer - performs next instruction  
+   
+CPSR : Current Processor Status Registers  
+	>  31     30     29     28     27  . . . . . . 8     7     6      5        4 . . . 0   
+	>|  N   |   Z   |   C  |   V   |        SBZ         |  I   |  F  | SBZ |  MODE  |  
 
 
 ####Flags
->Negative : (N)
->Zero : (Z)
->Carry: (C)
+Negative : (N)  
+Zero : (Z)  
+Carry: (C)  
 ####System control
->Overflow: (V) 
->I bit : if Interrupts (I)
->F bit : Fast Interrupts (F)
+Overflow: (V)   
+I bit : if Interrupts (I)  
+F bit : Fast Interrupts (F)  
+  
+ARM instruction set divided into six broad classes: Data Movement, Arithmetic, Memory Access, Logical and Bit Manipulation, Flow control, and System Control/ Privileged
+  
+Instruction Mnemonics  
+	+---------------------------------------------------------+--------------------------------------------------------+  
+	|   Operation                                                   |   Operation                                                 |  
+	|   Mnemonic        meaning                           |   Mnemonic               meaning                  |   
+	+---------------------------------------------------------+--------------------------------------------------------+  
+	     ADC             Add with carry                               MVN                  Logical NOT           
+	     ADD
+	     AND
+	     BAL
+	     B(cc)
+	     BIC
+	     BLAL
+ 	    BL(cc)
+	     CMP
+ 	    EOR
+	     LDM
+	     LDR
+	     LDRB
+	     MLA
+	     MOV
+	     MRS
+	     MSR
+	     MUL
 
->ARM instruction set divided into six broad classes: Data Movement, Arithmetic, Memory Access, Logical and Bit Manipulation, Flow control, and System Control/ Privileged
-
->Instruction Mnemonics
->+---------------------------------------------------------+--------------------------------------------------------+
->|   Operation                                                   |   Operation                                                 |
->|   Mnemonic        meaning                           |   Mnemonic               meaning                  | 
->+---------------------------------------------------------+--------------------------------------------------------+
->     ADC             Add with carry                               MVN                  Logical NOT           
->     ADD
->     AND
->     BAL
->     B(cc)
->     BIC
->     BLAL
->     BL(cc)
->     CMP
->     EOR
->     LDM
->     LDR
->     LDRB
->     MLA
->     MOV
->     MRS
->     MSR
->     MUL
-
->Conditional code (cc) Mnemonics
->CS Carry Set
+Conditional code (cc) Mnemonics  
+CS Carry Set
  
 
 
