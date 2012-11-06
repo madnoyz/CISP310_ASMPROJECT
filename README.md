@@ -42,7 +42,7 @@ Special purpose registers ( R13 - R15 )
 *R15 is Program Counter (PC) or instruction pointer - performs next instruction  
    
 CPSR : Current Processor Status Registers  
-	>  31     30     29     28     27  . . . . . . 8     7     6      5        4 . . . 0   
+	>  31     30     29     28     27 - 8     7     6      5        4 - 0   
 	>|  N   |   Z   |   C  |   V   |        SBZ         |  I   |  F  | SBZ |  MODE  |  
 
 
@@ -58,31 +58,31 @@ F bit : Fast Interrupts (F)
 ARM instruction set divided into six broad classes: Data Movement, Arithmetic, Memory Access, Logical and Bit Manipulation, Flow control, and System Control/ Privileged
   
 Instruction Mnemonics  
-	+---------------------------------------------------------+--------------------------------------------------------+  
-	|   Operation                                                   |   Operation                                                 |  
-	|   Mnemonic        meaning                           |   Mnemonic               meaning                  |   
-	+---------------------------------------------------------+--------------------------------------------------------+  
-	     ADC             Add with carry                               MVN                  Logical NOT           
-	     ADD
-	     AND
-	     BAL
-	     B(cc)
-	     BIC
-	     BLAL
- 	    BL(cc)
-	     CMP
- 	    EOR
-	     LDM
-	     LDR
-	     LDRB
-	     MLA
-	     MOV
-	     MRS
-	     MSR
-	     MUL
+	>+---------------------------------------------------------+--------------------------------------------------------+  
+	>|   Operation                                                   |   Operation                                                 |  
+	>|   Mnemonic        meaning                           |   Mnemonic               meaning                  |   
+	>+---------------------------------------------------------+--------------------------------------------------------+  
+	>     ADC             Add with carry                               MVN                  Logical NOT           
+	>     ADD
+	>     AND
+	>     BAL
+	>     B(cc)
+	>     BIC
+	>     BLAL
+ 	>     BL(cc)
+	>     CMP
+ 	>     EOR
+	>     LDM
+	>     LDR
+	>     LDRB
+	>     MLA
+	>     MOV
+	>     MRS
+	>     MSR
+	>     MUL
 
 Conditional code (cc) Mnemonics  
-CS Carry Set
+CS Carry Set  
  
 
 
