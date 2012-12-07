@@ -1,7 +1,7 @@
 ###CISP310_ASMPROJECT
 ==================
 
-#Project: Racer X - Go Go ASM Speed Racer!
+#Project: MSP-AutoDriver
 
 ###Description:
 This hub will document our progress and contain the Source Code for *CISP 310 Final Group Project*.
