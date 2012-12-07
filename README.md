@@ -18,11 +18,20 @@ James Daley , Henway Fong, Clyde Pabro, Sang Pham
 * Oct..23.2012 - James wired up the MSP430 to the microcontroller of the remote controlled car.
 * Oct.30.2012 - Presented our Project to the Class. James showcased his prototype.
 * Nov 6, 2012 - Configure infrared sensors, finish coding basic movements to MSP430
+* Nov 20, 2012 - 430oh.com is a great website for information for the msp430.
+* Nov 27, 2012 - Coding basic maneuvers in Energia. Need to convert to ASM.
+* Dec 4, 2012 - James built a prototype for the infrared sensor. Radio Shack item No. 276-0142 Infrared Emitter and Dectector. Ohms law needed for resistors.
+* Dec 11, 2012 - Complete build/outline. Need to cleanup presentation and practice. Tidy up the code, pictures, diagrams. 
+* Dec 18, 2012 - Group project presentation date.
+
+##Group Website
+[Microsoft Group Website](https://groups.live.com/CISP310F12)
 
 ##Project Notes
 ###Tasks to be completed
 Install infrared sensors to MSP430  
-Code basic movements - frwd, back, right, left  
+Code basic movements - frwd, back, right, left
+Code basic paths - circle, figure eight, box, reverse circle, etc.  
 Establish diagram for registers/pins with usage  
 Convert source code to assembly  
 
