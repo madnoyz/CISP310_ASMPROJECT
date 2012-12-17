@@ -1,0 +1,55 @@
+;---------------------------------------------------------------------------------------------------------------------------
+;Cips 310 project
+;This program control the car. Keep it from hitting walls and turns when there the sensor senses an object
+;this program base on p1.7 backward, p1.6 right, p2.4 left, p2.5 forward, and  p2.3 sensor
+;changes may be made to correct the pin operation
+;button press(P1.3) may be used to jump from different car path pattern
+;button ON as defaut, so jc to jump then jnc to jump to button press then jc to jump to another button press
+;-------------------------------------------------------------------------------------------------------------------------
+;this code might be needed if the mechanic of the car is noisy. wait and L1 is a jump point 
+;Wait        mov.w   #1834,R15               ; load R15 with value for delay
+;L1          dec.w   R15                     ; decrement R15
+;            jnz     L1                      ; if R15 is not zero jump to L1
+;            jmp     Carloop                ; jump to the Mainloop label
+;--------------------------------------------------------------------------------------------------------------------
+.cdecls C, LIST, “msp430g2553.h” 	;import C header file	
+;--------------------------------------------------------------------------------------------------------------------
+;Main Code
+;--------------------------------------------------------------------------------------------------------------------
+.text
+.global _main
+_main		
+	mov.w 	#0280h, SP				;initialize stack pointer - Stack point
+	mov.w	#WDTPW+WDTHOLD, &WDTCHTL		;stop watchdog timer	- regular housekeeping
+	
+	bis.b	#11000000b, &P1DIR	  		;make p1.7 and p1.6 output to control backward and right motion
+	Bis.b	#00110000b, &P1DIR			;make p2.5 and p2.4 output to control forward and left motion
+							;p2.3 is also set as input
+	
+Carloop	bit.b	#00001000b, &P2IN			;read p2.3 if p2.3 is on jump to turn the car
+	jc	Turn					;sensor is on then jump to turn the car
+Strgth	bic.b	#00010000b, &P2OUT			;clear bit to turn left to off
+	bic.b	#11000000b, &P1OUT			;clear bit to turn right and backward to off
+	bis.b	#00100000b, &P2OUT			;open bit to go forward, current allow thru
+	jmp	Carloop					;keep going staight unless need to turn then jump to Turn
+
+Turn	bic.b	#00100000b, &P2OUT			;stop the car from going straight since there an obsticle
+	bic.b	#11000000b, &P1OUT			;clear bit to turn right and backward to off
+	bis.b	#00010000b, &P2OUT			;set bit to turn left to ON, car turn left
+	
+	bit.b	#00001000b, &P2IN			;read p2.3 if p2.3 is still on jump, keep turn the car
+	jc	Turn					;sensor is on then jump to turn the car
+	jmp	Strgth					;if sensor is clear then jump back to go straight
+	
+	
+;------------------------------------------------------------------------------------------------------------------
+;Interrupt Vectors
+;------------------------------------------------------------------------------------------------------------------
+       .sect   ".reset"               			;MSP430 RESET Vector
+       .short  _main                  			;some housekeeping
+
+       .end						;end the program
+
+
+
+			
