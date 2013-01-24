@@ -23,6 +23,7 @@ James Daley , Henway Fong, Clyde Pabro, Sang Pham
 * Dec 4, 2012 - James built a prototype for the infrared sensor. Radio Shack item No. 276-0142 Infrared Emitter and Dectector. Ohms law needed for resistors.
 * Dec 11, 2012 - Complete build/outline. Need to cleanup presentation and practice. Tidy up the code, pictures, diagrams. 
 * Dec 18, 2012 - Group project presentation date.
+* Jan 24, 2012 - The Future of Technology? [IEEE: Job Market of 2045](http://spectrum.ieee.org/podcast/at-work/tech-careers/the-job-market-of-2045/)
 
 ##Group Website
 [Microsoft Group Website](https://groups.live.com/CISP310F12)
